@@ -4,8 +4,7 @@ import ReactVirtualKeyboard from "./ReactVirtualKeyboard";
 class Example extends Component {
   state = {
     model: {
-      username: "",
-      password: ""
+      calculate: "",
     },
     currentInputElement: null
   };
@@ -22,38 +21,22 @@ class Example extends Component {
             <div className="card mb-2">
               <div className="card-body">
                 <form className="form-inline">
-                  <label htmlFor="username" className="mr-2">
-                    Username:
+                  <label htmlFor="calculate" className="mr-2">
+                    Desired Operations:
                   </label>
                   <input
                     type="text"
                     className="form-control"
-                    id="username"
-                    name="username"
-                    value={model.username}
+                    id="calculate"
+                    name="Desired Operations"
+                    value={model.calculate}
                     onFocus={e =>
                       this.setState({ currentInputElement: e.target })
                     }
                     onChange={e => {
-                      this.update("username", e.target.value);
+                      this.update("calculate", e.target.value);
                     }}
                     autoFocus
-                  />
-                  <label className="mr-2 ml-3" htmlFor="password">
-                    Password:
-                  </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    id="password"
-                    name="password"
-                    value={model.password}
-                    onFocus={e =>
-                      this.setState({ currentInputElement: e.target })
-                    }
-                    onChange={e => {
-                      this.update("password", e.target.value);
-                    }}
                   />
                 </form>
               </div>
